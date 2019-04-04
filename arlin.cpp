@@ -6,18 +6,18 @@ int move(bool beurt, int size, vector<int> & speelveldt, int diepte, vector<int>
 	vector<int> speelveld = speelveldt;
 	//0 is beurt voor computer, 1 is beurt voor de speler
 	if(beurt == 0){
-//		cout << "\naan de beurt Computer\n";
+		cout << "\naan de beurt Computer\n";
 		for(unsigned int i =0; i < 9; i++){
 			if (speelveld[i] == 0){
 				speelveld[i] = 2;
 				
-//				cout << "\nhuidige diepte: " << diepte << "\n";
-//				for (unsigned int j=0; j < 9; j++){
-//					if(j%3 == 0){
-//						cout << "\n";
-//					}
-//					cout << speelveld[j];
-//				}
+				cout << "\nhuidige diepte: " << diepte << "\n";
+				for (unsigned int j=0; j < 9; j++){
+					if(j%3 == 0){
+						cout << "\n";
+					}
+					cout << speelveld[j];
+				}
 				cout << "\n";
 				if (speelveld[0] == 2 && speelveld[1] == 2 && speelveld[2] == 2){diepteEen.push_back(diepte); return 1;}
 				if (speelveld[3] == 2 && speelveld[4] == 2 && speelveld[5] == 2){diepteEen.push_back(diepte); return 1;}
@@ -38,18 +38,18 @@ int move(bool beurt, int size, vector<int> & speelveldt, int diepte, vector<int>
 	}
 	//speler
 	if(beurt == 1){
-//		cout << "\naan de beurt Speler\n";
+		cout << "\naan de beurt Speler\n";
 		for(unsigned int i =0; i < 9; i++){
 			if(speelveld[i] == 0){
 				speelveld[i] = 1;
 			
-//			cout << "\nhuidige diepte: " << diepte << "\n";
-//			for (unsigned int j=0; j < 9; j++){
-//					if(j%3 == 0){
-//						cout << "\n";
-//					}
-//					cout << speelveld[j];
-//				}
+			cout << "\nhuidige diepte: " << diepte << "\n";
+			for (unsigned int j=0; j < 9; j++){
+					if(j%3 == 0){
+						cout << "\n";
+					}
+					cout << speelveld[j];
+				}
 			cout << "\n";
 			if (speelveld[0] == 1 && speelveld[1] == 1 && speelveld[2] == 1){diepteNul.push_back(diepte);return 0;}
 			if (speelveld[3] == 1 && speelveld[4] == 1 && speelveld[5] == 1){diepteNul.push_back(diepte);return 0;}
@@ -73,15 +73,17 @@ int move(bool beurt, int size, vector<int> & speelveldt, int diepte, vector<int>
 
 
 int main(){
+	int tmpVerschil = 0;
+	vector<vector<int>> mogelijkheden = {};
 	vector<int> diepteNul = {};
 	vector<int> diepteEen = {};
 	int aantalVrijePlekken = 0;
 	int tijdelijkeGrootsteVerschil = 0;
 	int indexTijdelijkeGrootsteVerschil = 0;
 	int besteZet = -1;
-	vector<int> speelveldje = {1,1,0,
+	vector<int> speelveldje = {1,2,2,
 							   0,0,2,
-							   2,0,0};
+							   1,0,1};
 	
 	//berekent aantal vrije plekken
 	for(unsigned int i = 0; i < speelveldje.size(); i++){
@@ -91,59 +93,53 @@ int main(){
 	}
 	
 	for(unsigned int i = 0; i < speelveldje.size(); i++){
-		
+		cout << "\n"<< i << "\n";
 		if (speelveldje[i] == 0){
 			diepteEen.clear();
 			diepteNul.clear();
 			
-			cout << "\n";
+
 			
 			vector<int> tmp = speelveldje;
 			
 			tmp[i] = 2;
 
 			move(true, aantalVrijePlekken, tmp, 0, diepteNul, diepteEen);
+
 			
-			
-			//min van alle dieptes berekenen
-			
-			//print alle items uit de diepte lijsten
-			
-			//for (unsigned int i=0; i < diepteNul.size(); i++){
-				//cout << diepteNul[i] << ": van 0\n";
-			//}
-			//cout << diepteNul.size() << " :size \n";
-			
-			//for (unsigned int i=0; i < diepteEen.size(); i++){
-//				cout << diepteEen[i] << ": van 1\n";
-//			}
-//			cout << diepteEen.size() << " :size \n";
-			
-			//min diepte berkenene van nul
-			int tmpDiepte = diepteNul[0];
-			for (unsigned int i=1; i < diepteNul.size(); i++){
-				//cout << "0: " << diepteNul[i] << "\n";
-				if (diepteNul[i] == 0){
-					diepteNul.erase(diepteNul.begin() + i);
-					continue;
-				}
-				if (tmpDiepte > diepteNul[i]){
-					
-					tmpDiepte = diepteNul[i];
-				}
-			}
-			cout << "Van nul: "<<tmpDiepte << "\n";
 			
 			//min diepte berekenen van een
-			tmpDiepte = diepteEen[0];
-			for (unsigned int i=1; i < diepteEen.size(); i++){
-				//cout << "1:" << diepteEen[i] << "\n";
-				if (tmpDiepte > diepteEen[i]){
+			int tmpDiepte = diepteEen[0];
+			for (unsigned int j=1; j < diepteEen.size(); j++){
+			
+				if (tmpDiepte > diepteEen[j]){
 					
-					tmpDiepte = diepteEen[i];
+					tmpDiepte = diepteEen[j];
 				}
 			}
 			cout << "van een: "<< tmpDiepte << "\n";
+			tmpVerschil = tmpDiepte;
+			tmpDiepte = diepteNul[0];
+			
+			for (unsigned int j=1; j < diepteNul.size(); j++){
+				
+				if (diepteNul[j] == 0){
+					diepteNul.erase(diepteNul.begin() + j);
+					continue;
+				}
+				if (tmpDiepte > diepteNul[j]){
+					
+					tmpDiepte = diepteNul[j];
+				}
+			}
+			cout << "Van nul: "<< tmpDiepte << "\n";
+			tmpVerschil -= tmpDiepte;
+			
+			if(tmpVerschil >= 0){
+				
+				mogelijkheden.push_back({i, tmpVerschil});
+				
+			}
 			
 			
 			
@@ -157,8 +153,20 @@ int main(){
 		}
 		
 	}
-	cout << "Het grootste verschil tussen eentjes en nulletjes is: " << tijdelijkeGrootsteVerschil << "\n";
-	cout << "De index daarvan is: " << besteZet << "\n";
+	int max = mogelijkheden[0][1];
+	int maxIndex = mogelijkheden[0][0];
+	for(unsigned int i = 1; i < mogelijkheden.size(); i++){
+		
+		if (max < mogelijkheden[i][1]){
+			
+			max = mogelijkheden[i][1];
+			maxIndex = mogelijkheden[i][0];
+			
+		}
+		
+	}
+	besteZet = maxIndex;
+	cout << "\nDe index daarvan is: " << besteZet << "\n";
 	
 	
 	
