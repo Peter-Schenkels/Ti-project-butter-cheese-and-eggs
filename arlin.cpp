@@ -86,7 +86,7 @@ int main(){
 	int tijdelijkeGrootsteVerschil = 0;
 	int indexTijdelijkeGrootsteVerschil = 0;
 	int besteZet = -1;
-	vector<int> speelveldje = {1S,0,0,
+	vector<int> speelveldje = {0,0,0,
 							   0,0,0,
 							   0,0,0};
 	
@@ -94,10 +94,29 @@ int main(){
 	for(unsigned int i = 0; i < speelveldje.size(); i++){
 		if(speelveldje[i] == 0){
 			aantalVrijePlekken++;
+			 
 		}
 	}
 	
+	
+	
+	
+	
+	//hier was ik mee bezig gaylin 
+	
+	
+	
+	
+	
+	
+	
 	for(unsigned int i = 0; i < speelveldje.size(); i++){
+		if (speelveldje == {0,0,0,0,0,0,0,0,0}){
+			speelveldje[0] = 2;
+			firstmove = 1;
+			break;
+			
+		}
 		if (speelveldje[i] == 0){
 			diepteEen.clear();
 			diepteNul.clear();
