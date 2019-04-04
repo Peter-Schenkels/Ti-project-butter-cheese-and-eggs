@@ -103,26 +103,28 @@ int main(){
 			//cout << eentjes << " :eentjes\n" << nulletjes << " :nulletjes\n";
 			
 			//min van alle dieptes berekenen
+			
+			//print alle items uit de diepte lijsten
 			for (unsigned int i=1; i < diepteNul.size(); i++){
 				cout << diepteNul[i] << ": van 0\n";
 			}
 			for (unsigned int i=1; i < diepteEen.size(); i++){
 				cout << diepteEen[i] << ": van 1\n";
 			}
-				
+			
+			//min diepte berkenene van nul
 			int tmpDiepte = diepteNul[0];
 			for (unsigned int i=1; i < diepteNul.size(); i++){
 				//cout << "0: " << diepteNul[i] << "\n";
-				if (diepteNul[i] == 0){
-					
-					continue;
-				}
+				
 				if (tmpDiepte > diepteNul[i]){
 					
 					tmpDiepte = diepteNul[i];
 				}
 			}
 			cout << "Van nul: "<<tmpDiepte << "\n";
+			
+			//min diepte berekenen van een
 			tmpDiepte = diepteEen[0];
 			for (unsigned int i=1; i < diepteEen.size(); i++){
 				//cout << "1:" << diepteEen[i] << "\n";
