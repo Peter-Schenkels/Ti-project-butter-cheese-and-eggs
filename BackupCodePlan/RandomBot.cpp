@@ -22,7 +22,34 @@ vector<int> checkspeelveld(vector<int> &speelveld, vector<int> &robotzetten){
     }
 }
 
-int checkwin(vector<int> &checkedveld, int &speler){
+bool checkwin(vector<int> &checkedveld, int &speler){
+    //horizontaal
+    if(checkedveld[0] == speler && checkedveld[1] == speler && checkedveld[2] == speler){
+        return true;
+    }else if(checkedveld[3] == speler && checkedveld[4] == speler && checkedveld[5] == speler){
+        return true;
+    }else if(checkedveld[6] == speler && checkedveld[7] == speler && checkedveld[8] == speler){
+        return true;
+    }
+    //verticaal
+    if(checkedveld[0] == speler && checkedveld[3] == speler && checkedveld[6] == speler){
+        return true;
+    }else if(checkedveld[1] == speler && checkedveld[4] == speler && checkedveld[7] == speler){
+        return true;
+    }else if(checkedveld[2] == speler && checkedveld[5] == speler && checkedveld[8] == speler){
+        return true;
+    }
+    //diagonaal
+    if(checkedveld[0] == speler && checkedveld[4] == speler && checkedveld[8] == speler){
+        return true;
+    }else if(checkedveld[2] == speler && checkedveld[4] == speler && checkedveld[6] == speler) {
+        return true;
+    }else{
+        return false;
+    }
+}
+
+int checkwinchance(vector<int> &checkedveld, int &speler){
     //horizontaal
     //rij 1
     if(checkedveld[0] == speler && checkedveld[1] == speler){
@@ -134,6 +161,9 @@ int randomindex(int upper){
 int main(){
     int robot = 1;
     int user = 2;
+    int winner = 0;
+    bool finished = false;
+
     vector<int> speelveld = {0,0,0,
                              0,0,0,
                              0,0,0};
@@ -144,37 +174,59 @@ int main(){
     vector<int> legeindex = {};
     int nextmoveindex = 0;
 
-    //
-    //robot shit
-    //
+    while(finished == false) {
+        //
+        //robot checked de vakjes
+        //
+        vector<int> checkedveld = checkspeelveld(speelveld, robotzetten);
 
-    vector<int> checkedveld = checkspeelveld(speelveld, robotzetten);
-
-    nextmoveindex = checkwin(checkedveld, robot);
-
-    cout << "\n" << nextmoveindex << "\n";
-
-    if(nextmoveindex == -1){
-        nextmoveindex = checkwin(checkedveld, user);
-    }
-    cout << nextmoveindex << "\n";
-
-    if(nextmoveindex == -1){
-        legeindex = {};
-        for(unsigned int i = 0; i < checkedveld.size(); i++){
-            if(checkedveld[i] == 0){
-                legeindex.push_back(i);
-            }
+        if (checkwin(checkedveld, robot) == true) {
+            winner = robot;
+            finished = true;
         }
-        srand(time(0));
-        int gekozenindex = randomindex(legeindex.size());
-        nextmoveindex = legeindex[gekozenindex];
-    }
-    cout << nextmoveindex << "\n";
-    string naam = "streepjeInVakje" + to_string(nextmoveindex + 1);
-    cout << "Naam: " << naam << endl;
-    //
-    //beweeg robot naar index
-    //
 
+        if (checkwin(checkedveld, user) == true) {
+            winner = user;
+            finished = true;
+        }
+
+        nextmoveindex = checkwinchance(checkedveld, robot);
+
+        cout << "\n" << nextmoveindex << "\n";
+
+        if (nextmoveindex == -1) {
+            nextmoveindex = checkwinchance(checkedveld, user);
+        }
+        cout << nextmoveindex << "\n";
+
+        if (nextmoveindex == -1) {
+            legeindex = {};
+            for (unsigned int i = 0; i < checkedveld.size(); i++) {
+                if (checkedveld[i] == 0) {
+                    legeindex.push_back(i);
+                }
+            }
+            if (legeindex.size() == 0) {
+                winner = 3;
+                finished = true;
+            }
+            srand(time(0));
+            int gekozenindex = randomindex(legeindex.size());
+            nextmoveindex = legeindex[gekozenindex];
+        }
+        cout << nextmoveindex << "\n";
+        string naam = "streepjeInVakje" + to_string(nextmoveindex + 1);
+        cout << "Naam: " << naam << endl;
+        //
+        //beweeg robot naar index
+        //
+    }
+
+    if(winner == robot){
+        cout << "Wanneer ik gewonnen heb:\n" << "Hey!, ik heb gewonnen!";
+    }else if(winner == user){
+        cout << "Gefeliciteerd met uw EPIC VICTORY ROYALE!";
+    }else{
+        cout << "Gelijkspel? Wat jammer! ;)";
+    }
 }
