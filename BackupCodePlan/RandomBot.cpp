@@ -158,7 +158,7 @@ int randomindex(int upper){
     return num;
 }
 
-//Arlin
+//Arlin Oerlain
 
 int main(){
     int robot = 1;
