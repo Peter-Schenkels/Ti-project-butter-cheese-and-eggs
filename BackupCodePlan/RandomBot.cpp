@@ -1,8 +1,8 @@
 #include <vector>
 #include <iostream>
 #include <stdio.h> // voor
-#include <stdlib.h>//
-#include <time.h>  //
+#include <stdlib.h>// random
+#include <time.h>  // jes
 using namespace std;
 
 //Robot = 1
@@ -171,6 +171,7 @@ int main(){
     vector<int> robotzetten = {0,0,0,
                                0,0,0,
                                0,0,0};
+
     vector<int> legeindex = {};
     int nextmoveindex = 0;
 
