@@ -1,8 +1,8 @@
 #include <vector>
 #include <iostream>
-#include <stdio.h> // voor
-#include <stdlib.h>// random
-#include <time.h>  // jes
+#include <stdio.h> // Voor
+#include <stdlib.h>// Random
+#include <time.h>  // Jes
 using namespace std;
 
 //Robot = 1
@@ -47,7 +47,7 @@ bool checkwin(vector<int> &checkedveld, int &speler){
     }else{
         return false;
     }
-}
+} //Checkt of een speler gewonnen heeft.
 
 int checkwinchance(vector<int> &checkedveld, int &speler){
     //horizontaal
@@ -151,13 +151,12 @@ int checkwinchance(vector<int> &checkedveld, int &speler){
     else{
         return -1;
     }
-}
+} //Checkt of een speler een kans heeft om te winnen.
 
 int randomindex(int upper){
     int num = rand() % upper;
     return num;
-}
-
+} //Geeft random index.
 //Arlin Oerlain
 
 int main(){
