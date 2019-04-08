@@ -94,6 +94,7 @@ void drawGrid(){
 
 //Zet een streepje in een vakje.
 void streepjeInVak(int vakje, vector<int> &speelveld) {
+    speelveld[vakje-1] = 1;
     if(vakje == 1) {
         // Streep tekenen in eerste vakje
         // Arm naar eerste vakje
