@@ -93,7 +93,7 @@ void drawGrid(){
 }
 
 //Zet een streepje in een vakje.
-void streepjeInVak(int vakje){
+void streepjeInVak(int vakje, vector<int> &speelveld) {
     if(vakje == 1) {
         // Streep tekenen in eerste vakje
         // Arm naar eerste vakje
@@ -833,15 +833,11 @@ int main() {
                              0, 0, 0,
                              0, 0, 0};
 
-    vector<int> robotzetten = {0, 0, 0,
-                               0, 0, 0,
-                               0, 0, 0};
-
     vector<int> legeindex = {};
     int nextmoveindex = 0;
 
     drawGrid();
-    streepjeInVak(1);
+    streepjeInVak(1, speelveld);
 
     while (finished == false) {
         error = 0;
@@ -895,7 +891,8 @@ int main() {
 
                 BP.set_motor_position(PORT_B, 0);
                 sleep(2);
-                streepjeInVak(nextmoveindex);
+                streepjeInVak(nextmoveindex, speelveld);
+                Touch3.pressed = false;
             }
         }
 
@@ -913,6 +910,8 @@ int main() {
     } else {
         cout << "Gelijkspel? Wat jammer! ;)";
     }
+    BP.reset_all();    // Reset everything so there are no run-away motors
+    exit(-2);
 }
 
 
