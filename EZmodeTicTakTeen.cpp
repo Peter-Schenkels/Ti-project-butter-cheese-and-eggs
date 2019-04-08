@@ -547,7 +547,7 @@ void scannenPerVakje(sensor_color_t Color2, vector<int> &speelveld) {
     colorValue = (Color2.reflected_red + Color2.reflected_green + Color2.reflected_blue) / 3;
     if(scanVakje(colorValue) && (speelveld[1] == 0)){
         speelveld[1] = 2;
-        printf("Streep in vak 1\n");
+        printf("Streep in vak 2\n");
         return;
     }
     sleep(2);
@@ -563,7 +563,7 @@ void scannenPerVakje(sensor_color_t Color2, vector<int> &speelveld) {
     colorValue = (Color2.reflected_red + Color2.reflected_green + Color2.reflected_blue) / 3;
     if(scanVakje(colorValue) && (speelveld[2] == 0)){
         speelveld[2] = 2;
-        printf("Streep in vak 1\n");
+        printf("Streep in vak 3\n");
         return;
     }
     sleep(2);
@@ -575,7 +575,7 @@ void scannenPerVakje(sensor_color_t Color2, vector<int> &speelveld) {
     colorValue = (Color2.reflected_red + Color2.reflected_green + Color2.reflected_blue) / 3;
     if(scanVakje(colorValue) && (speelveld[5] == 0)){
         speelveld[5] = 2;
-        printf("Streep in vak 1\n");
+        printf("Streep in vak 4\n");
         return;
     }
     sleep(2);
@@ -591,7 +591,7 @@ void scannenPerVakje(sensor_color_t Color2, vector<int> &speelveld) {
     colorValue = (Color2.reflected_red + Color2.reflected_green + Color2.reflected_blue) / 3;
     if(scanVakje(colorValue) && (speelveld[4] == 0)){
         speelveld[4] = 2;
-        printf("Streep in vak 1\n");
+        printf("Streep in vak 5\n");
         return;
     }
     sleep(2);
@@ -607,7 +607,7 @@ void scannenPerVakje(sensor_color_t Color2, vector<int> &speelveld) {
     colorValue = (Color2.reflected_red + Color2.reflected_green + Color2.reflected_blue) / 3;
     if(scanVakje(colorValue) && (speelveld[3] == 0)){
         speelveld[3] = 2;
-        printf("Streep in vak 1\n");
+        printf("Streep in vak 6\n");
         return;
     }
     sleep(2);
@@ -619,7 +619,7 @@ void scannenPerVakje(sensor_color_t Color2, vector<int> &speelveld) {
     colorValue = (Color2.reflected_red + Color2.reflected_green + Color2.reflected_blue) / 3;
     if(scanVakje(colorValue) && (speelveld[6] == 0)){
         speelveld[6] = 2;
-        printf("Streep in vak 1\n");
+        printf("Streep in vak 7\n");
         return;
     }
     sleep(2);
@@ -635,7 +635,7 @@ void scannenPerVakje(sensor_color_t Color2, vector<int> &speelveld) {
     colorValue = (Color2.reflected_red + Color2.reflected_green + Color2.reflected_blue) / 3;
     if(scanVakje(colorValue) && (speelveld[7] == 0)){
         speelveld[7] = 2;
-        printf("Streep in vak 1\n");
+        printf("Streep in vak 8\n");
         return;
     }
     sleep(2);
@@ -651,7 +651,7 @@ void scannenPerVakje(sensor_color_t Color2, vector<int> &speelveld) {
     colorValue = (Color2.reflected_red + Color2.reflected_green + Color2.reflected_blue) / 3;
     if(scanVakje(colorValue) && (speelveld[8] == 0)){
         speelveld[8] = 2;
-        printf("Streep in vak 1\n");
+        printf("Streep in vak 9\n");
         return;
     }
     sleep(2);
