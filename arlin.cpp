@@ -16,7 +16,7 @@ int move(vector<int> speelveldt, int diepte, int size){
 		beurt = 0;
 	}
 	cout << "beurt: " << beurt << "\n";
-	
+
 	cout << diepte << "\n";
 	//computer is 0 maar speelding is 1
 	

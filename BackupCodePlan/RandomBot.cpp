@@ -20,7 +20,7 @@ vector<int> checkspeelveld(vector<int> &speelveld, vector<int> &robotzetten){
             tempveld[i] = 2;
         }
     }
-}
+} // maakt robotzetten 1
 
 bool checkwin(vector<int> &checkedveld, int &speler){
     //horizontaal
