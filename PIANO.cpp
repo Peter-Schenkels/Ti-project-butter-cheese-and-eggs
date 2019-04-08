@@ -18,7 +18,7 @@ void transform(vector<char> & noots){
 		if (noots[i] == f){
 			newList.push_back(4);
 		}
-		if (noots[i] == g){
+		if (noots[i] == ){
 			newList.push_back(5);
 		}
 		if (noots[i] == a){
