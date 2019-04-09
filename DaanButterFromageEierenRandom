@@ -78,18 +78,20 @@ int move(const vector<vector<int>> & winningSets, const vector<int> & playfield)
 		return chanceMoves[0];
 	} else if (chanceMoves[1] > 0) {
 		return chanceMoves[1];
-	} else {
+	} else if (chanceMoves[0] == -1 && chanceMoves[1] == -1) {
 		vector<int> emptyPlaces = {};
 		for (unsigned int i=0; i<playfield.size(); i++) {
 			if (playfield[i] == 0) {
 				emptyPlaces.push_back(i+1);
-				cout << i << '\n';
 			}
 		}
 		srand(time(NULL));
 		int random_number = rand()%emptyPlaces.size();
 		return emptyPlaces[random_number];
+	} else if (chanceMoves[0] == 0) {
+		return 0;
 	}
+	return -1;
 }
 
 int main(){
@@ -112,10 +114,16 @@ int main(){
 	// {Speler (0 = geen, 1 = robot, 2 = mens), Place (0 = geen gridplek, 1 t/m 9 = in de grid)}
 	vector<int> playfield = {
 		2,1,1,
-		1,0,2,
-		0,2,1
+		2,2,2,
+		1,2,1
 	};
 	
 	int bestMove = move(winningSets, playfield);
-	cout << "beste move is: " << bestMove << "\n"; 
+	if (bestMove > 0) {
+		cout << "Gegeven move is: " << bestMove << '\n';
+	} else if (bestMove == 0) {
+		cout << "De robot heeft een jaimey royal op jouw gedaan.\n";
+	} else {
+		cout << "Jij hebt de robot ge-jaimey-royal'ed.\n";
+	}
 }
