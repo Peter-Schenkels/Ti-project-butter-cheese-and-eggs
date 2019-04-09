@@ -958,10 +958,14 @@ int main() {
                 }
 
                 nextmoveindex = checkwinchance(speelveld, robot);
-                if (nextmoveindex != -1){
-                    winner = robot;
-                    finished = true;
-                    cout << "\n" << nextmoveindex << "\n";
+                if (nextmoveindex != -1) {
+                    if (speelveld[nextmoveindex] == 0) {
+                        winner = robot;
+                        finished = true;
+                        cout << "\n" << nextmoveindex << "\n";
+                    }else{
+                        nextmoveindex = -1;
+                    }
                 }
 
                 if (nextmoveindex == -1) {
