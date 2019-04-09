@@ -20,13 +20,13 @@ void exit_signal_handler(int signo);
 void drawGrid(){
     // Pen naar beneden
     BP.set_motor_position(PORT_A, 0);
-    sleep(2);
+    sleep(1);
     // Arm naar voren (3,5)
     BP.set_motor_position(PORT_B, 645);
-    sleep(2);
+    sleep(1);
     // Pen naar boven
     BP.set_motor_position(PORT_A, 150);
-    sleep(2);
+    sleep(1);
     // Rijden naar links (1)
     BP.set_motor_dps(PORT_C, 100);
     BP.set_motor_dps(PORT_D, 100);
@@ -35,13 +35,13 @@ void drawGrid(){
     BP.set_motor_dps(PORT_D, 0);
     // Pen naar beneden
     BP.set_motor_position(PORT_A, 0);
-    sleep(2);
+    sleep(1);
     // Arm naar achteren (3)
     BP.set_motor_position(PORT_B, 0);
-    sleep(2);
+    sleep(1);
     // Pen naar boven
     BP.set_motor_position(PORT_A, 150);
-    sleep(2);
+    sleep(1);
     //----------------------------------
     // Rijden naar links (1)
     BP.set_motor_dps(PORT_C, 100);
@@ -51,10 +51,10 @@ void drawGrid(){
     BP.set_motor_dps(PORT_D, 0);
     // Arm naar voren (1)
     BP.set_motor_position(PORT_B, 430);
-    sleep(2);
+    sleep(1);
     // Pen naar beneden
     BP.set_motor_position(PORT_A, 0);
-    sleep(2);
+    sleep(1);
     // Rijden naar rechts (3)
     BP.set_motor_dps(PORT_C, -100);
     BP.set_motor_dps(PORT_D, -100);
@@ -63,31 +63,31 @@ void drawGrid(){
     BP.set_motor_dps(PORT_D, 0);
     // Pen naar boven
     BP.set_motor_position(PORT_A, 150);
-    sleep(2);
+    sleep(1);
     // Arm naar voren (1)
     BP.set_motor_position(PORT_B, 215);
-    sleep(2);
+    sleep(1);
     // Pen naar beneden
     BP.set_motor_position(PORT_A, 0);
-    sleep(2);
+    sleep(1);
     // Rijden naar links (3)
     BP.set_motor_dps(PORT_C, 100);
     BP.set_motor_dps(PORT_D, 100);
     sleep(3);
     BP.set_motor_dps(PORT_C, 0);
     BP.set_motor_dps(PORT_D, 0);
-    sleep(2);
+    sleep(1);
     // Reset alles
     BP.set_motor_position(PORT_A, 150);
-    sleep(2);
+    sleep(1);
     BP.set_motor_position(PORT_B, 0);
-    sleep(2);
+    sleep(1);
     BP.set_motor_dps(PORT_C, -100);
     BP.set_motor_dps(PORT_D, -100);
     sleep(2);
     BP.set_motor_dps(PORT_C, 0);
     BP.set_motor_dps(PORT_D, 0);
-    sleep(2);
+    sleep(1);
     BP.set_motor_position(PORT_B, -180);
     sleep(1);
 }
@@ -100,40 +100,40 @@ void streepjeInVak(int vakje, vector<int> &speelveld) {
         // Arm naar eerste vakje
         // Pen omhoog
         BP.set_motor_position(PORT_A, 150);
-        sleep(2);
+        sleep(1);
         BP.set_motor_position(PORT_B, 537.5);
-        sleep(2);
+        sleep(1);
         // Rijden
         BP.set_motor_dps(PORT_C, -25);
         BP.set_motor_dps(PORT_D, -25);
         sleep(1);
         BP.set_motor_dps(PORT_C, 0);
         BP.set_motor_dps(PORT_D, 0);
-        sleep(2);
+        sleep(1);
         // Pen naar beneden
         BP.set_motor_position(PORT_A, 0);
-        sleep(2);
+        sleep(1);
         // Streep tekenen door te rijden
         BP.set_motor_dps(PORT_C, -75);
         BP.set_motor_dps(PORT_D, -75);
         sleep(1);
         BP.set_motor_dps(PORT_C, 0);
         BP.set_motor_dps(PORT_D, 0);
-        sleep(2);
+        sleep(1);
         // Pen omhoog
         BP.set_motor_position(PORT_A, 150);
-        sleep(2);
+        sleep(1);
         // Reset alles
         BP.set_motor_position(PORT_A, 150);
-        sleep(2);
+        sleep(1);
         BP.set_motor_position(PORT_B, 0);
-        sleep(2);
+        sleep(1);
         BP.set_motor_dps(PORT_C, 100);
         BP.set_motor_dps(PORT_D, 100);
         sleep(1);
         BP.set_motor_dps(PORT_C, 0);
         BP.set_motor_dps(PORT_D, 0);
-        sleep(2);
+        sleep(1);
         //Arm naar achteren bij beginpunt, zodat speler een zet kan maken
         BP.set_motor_position(PORT_B, -180);
     }
@@ -142,40 +142,40 @@ void streepjeInVak(int vakje, vector<int> &speelveld) {
         // Arm naar tweede vakje
         // Pen omhoog
         BP.set_motor_position(PORT_A, 150);
-        sleep(2);
+        sleep(1);
         BP.set_motor_position(PORT_B, 537.5);
-        sleep(2);
+        sleep(1);
         // Rijden
         BP.set_motor_dps(PORT_C, 25);
         BP.set_motor_dps(PORT_D, 25);
         sleep(1);
         BP.set_motor_dps(PORT_C, 0);
         BP.set_motor_dps(PORT_D, 0);
-        sleep(2);
+        sleep(1);
         // Pen naar beneden
         BP.set_motor_position(PORT_A, 0);
-        sleep(2);
+        sleep(1);
         // Streep tekenen door te rijden
         BP.set_motor_dps(PORT_C, 75);
         BP.set_motor_dps(PORT_D, 75);
         sleep(1);
         BP.set_motor_dps(PORT_C, 0);
         BP.set_motor_dps(PORT_D, 0);
-        sleep(2);
+        sleep(1);
         // Pen omhoog
         BP.set_motor_position(PORT_A, 150);
-        sleep(2);
+        sleep(1);
         // Reset alles
         BP.set_motor_position(PORT_A, 150);
-        sleep(2);
+        sleep(1);
         BP.set_motor_position(PORT_B, 0);
-        sleep(2);
+        sleep(1);
         BP.set_motor_dps(PORT_C, -100);
         BP.set_motor_dps(PORT_D, -100);
         sleep(1);
         BP.set_motor_dps(PORT_C, 0);
         BP.set_motor_dps(PORT_D, 0);
-        sleep(2);
+        sleep(1);
         //Arm naar achteren bij beginpunt, zodat speler een zet kan maken
         BP.set_motor_position(PORT_B, -180);
     }
@@ -184,46 +184,46 @@ void streepjeInVak(int vakje, vector<int> &speelveld) {
         // Arm naar derde vakje
         // Pen omhoog
         BP.set_motor_position(PORT_A, 150);
-        sleep(2);
+        sleep(1);
         BP.set_motor_position(PORT_B, 537.5);
-        sleep(2);
+        sleep(1);
         // Rijden
         BP.set_motor_dps(PORT_C, 100);
         BP.set_motor_dps(PORT_D, 100);
         sleep(1);
         BP.set_motor_dps(PORT_C, 0);
         BP.set_motor_dps(PORT_D, 0);
-        sleep(2);
+        sleep(1);
         BP.set_motor_dps(PORT_C, 25);
         BP.set_motor_dps(PORT_D, 25);
         sleep(1);
         BP.set_motor_dps(PORT_C, 0);
         BP.set_motor_dps(PORT_D, 0);
-        sleep(2);
+        sleep(1);
         // Pen naar beneden
         BP.set_motor_position(PORT_A, 0);
-        sleep(2);
+        sleep(1);
         // Streep tekenen door te rijden
         BP.set_motor_dps(PORT_C, 75);
         BP.set_motor_dps(PORT_D, 75);
         sleep(1);
         BP.set_motor_dps(PORT_C, 0);
         BP.set_motor_dps(PORT_D, 0);
-        sleep(2);
+        sleep(1);
         // Pen omhoog
         BP.set_motor_position(PORT_A, 150);
-        sleep(2);
+        sleep(1);
         // Reset alles
         BP.set_motor_position(PORT_A, 150);
-        sleep(2);
+        sleep(1);
         BP.set_motor_position(PORT_B, 0);
-        sleep(2);
+        sleep(1);
         BP.set_motor_dps(PORT_C, -100);
         BP.set_motor_dps(PORT_D, -100);
         sleep(2);
         BP.set_motor_dps(PORT_C, 0);
         BP.set_motor_dps(PORT_D, 0);
-        sleep(2);
+        sleep(1);
         //Arm naar achteren bij beginpunt, zodat speler een zet kan maken
         BP.set_motor_position(PORT_B, -180);
     }
@@ -232,40 +232,40 @@ void streepjeInVak(int vakje, vector<int> &speelveld) {
         // Arm naar vierde vakje
         // Pen omhoog
         BP.set_motor_position(PORT_A, 150);
-        sleep(2);
+        sleep(1);
         BP.set_motor_position(PORT_B, 322.5);
-        sleep(2);
+        sleep(1);
         // Rijden
         BP.set_motor_dps(PORT_C, -25);
         BP.set_motor_dps(PORT_D, -25);
         sleep(1);
         BP.set_motor_dps(PORT_C, 0);
         BP.set_motor_dps(PORT_D, 0);
-        sleep(2);
+        sleep(1);
         // Pen naar beneden
         BP.set_motor_position(PORT_A, 0);
-        sleep(2);
+        sleep(1);
         // Streep tekenen door te rijden
         BP.set_motor_dps(PORT_C, -75);
         BP.set_motor_dps(PORT_D, -75);
         sleep(1);
         BP.set_motor_dps(PORT_C, 0);
         BP.set_motor_dps(PORT_D, 0);
-        sleep(2);
+        sleep(1);
         // Pen omhoog
         BP.set_motor_position(PORT_A, 150);
-        sleep(2);
+        sleep(1);
         // Reset alles
         BP.set_motor_position(PORT_A, 150);
-        sleep(2);
+        sleep(1);
         BP.set_motor_position(PORT_B, 0);
-        sleep(2);
+        sleep(1);
         BP.set_motor_dps(PORT_C, 100);
         BP.set_motor_dps(PORT_D, 100);
         sleep(1);
         BP.set_motor_dps(PORT_C, 0);
         BP.set_motor_dps(PORT_D, 0);
-        sleep(2);
+        sleep(1);
         //Arm naar achteren bij beginpunt, zodat speler een zet kan maken
         BP.set_motor_position(PORT_B, -180);
     }
@@ -274,40 +274,40 @@ void streepjeInVak(int vakje, vector<int> &speelveld) {
         // Arm naar vijde vakje
         // Pen omhoog
         BP.set_motor_position(PORT_A, 150);
-        sleep(2);
+        sleep(1);
         BP.set_motor_position(PORT_B, 322.5);
-        sleep(2);
+        sleep(1);
         // Rijden
         BP.set_motor_dps(PORT_C, 25);
         BP.set_motor_dps(PORT_D, 25);
         sleep(1);
         BP.set_motor_dps(PORT_C, 0);
         BP.set_motor_dps(PORT_D, 0);
-        sleep(2);
+        sleep(1);
         // Pen naar beneden
         BP.set_motor_position(PORT_A, 0);
-        sleep(2);
+        sleep(1);
         // Streep tekenen door te rijden
         BP.set_motor_dps(PORT_C, 75);
         BP.set_motor_dps(PORT_D, 75);
         sleep(1);
         BP.set_motor_dps(PORT_C, 0);
         BP.set_motor_dps(PORT_D, 0);
-        sleep(2);
+        sleep(1);
         // Pen omhoog
         BP.set_motor_position(PORT_A, 150);
-        sleep(2);
+        sleep(1);
         // Reset alles
         BP.set_motor_position(PORT_A, 150);
-        sleep(2);
+        sleep(1);
         BP.set_motor_position(PORT_B, 0);
-        sleep(2);
+        sleep(1);
         BP.set_motor_dps(PORT_C, -100);
         BP.set_motor_dps(PORT_D, -100);
         sleep(1);
         BP.set_motor_dps(PORT_C, 0);
         BP.set_motor_dps(PORT_D, 0);
-        sleep(2);
+        sleep(1);
         //Arm naar achteren bij beginpunt, zodat speler een zet kan maken
         BP.set_motor_position(PORT_B, -180);
     }
@@ -316,46 +316,46 @@ void streepjeInVak(int vakje, vector<int> &speelveld) {
         // Arm naar zesde vakje
         // Pen omhoog
         BP.set_motor_position(PORT_A, 150);
-        sleep(2);
+        sleep(1);
         BP.set_motor_position(PORT_B, 322.5);
-        sleep(2);
+        sleep(1);
         // Rijden
         BP.set_motor_dps(PORT_C, 100);
         BP.set_motor_dps(PORT_D, 100);
         sleep(1);
         BP.set_motor_dps(PORT_C, 0);
         BP.set_motor_dps(PORT_D, 0);
-        sleep(2);
+        sleep(1);
         BP.set_motor_dps(PORT_C, 25);
         BP.set_motor_dps(PORT_D, 25);
         sleep(1);
         BP.set_motor_dps(PORT_C, 0);
         BP.set_motor_dps(PORT_D, 0);
-        sleep(2);
+        sleep(1);
         // Pen naar beneden
         BP.set_motor_position(PORT_A, 0);
-        sleep(2);
+        sleep(1);
         // Streep tekenen door te rijden
         BP.set_motor_dps(PORT_C, 75);
         BP.set_motor_dps(PORT_D, 75);
         sleep(1);
         BP.set_motor_dps(PORT_C, 0);
         BP.set_motor_dps(PORT_D, 0);
-        sleep(2);
+        sleep(1);
         // Pen omhoog
         BP.set_motor_position(PORT_A, 150);
-        sleep(2);
+        sleep(1);
         // Reset alles
         BP.set_motor_position(PORT_A, 150);
-        sleep(2);
+        sleep(1);
         BP.set_motor_position(PORT_B, 0);
-        sleep(2);
+        sleep(1);
         BP.set_motor_dps(PORT_C, -100);
         BP.set_motor_dps(PORT_D, -100);
         sleep(2);
         BP.set_motor_dps(PORT_C, 0);
         BP.set_motor_dps(PORT_D, 0);
-        sleep(2);
+        sleep(1);
         //Arm naar achteren bij beginpunt, zodat speler een zet kan maken
         BP.set_motor_position(PORT_B, -180);
     }
@@ -364,40 +364,40 @@ void streepjeInVak(int vakje, vector<int> &speelveld) {
         // Arm naar zevende vakje
         // Pen omhoog
         BP.set_motor_position(PORT_A, 150);
-        sleep(2);
+        sleep(1);
         BP.set_motor_position(PORT_B, 107.5);
-        sleep(2);
+        sleep(1);
         // Rijden
         BP.set_motor_dps(PORT_C, -25);
         BP.set_motor_dps(PORT_D, -25);
         sleep(1);
         BP.set_motor_dps(PORT_C, 0);
         BP.set_motor_dps(PORT_D, 0);
-        sleep(2);
+        sleep(1);
         // Pen naar beneden
         BP.set_motor_position(PORT_A, 0);
-        sleep(2);
+        sleep(1);
         // Streep tekenen door te rijden
         BP.set_motor_dps(PORT_C, -75);
         BP.set_motor_dps(PORT_D, -75);
         sleep(1);
         BP.set_motor_dps(PORT_C, 0);
         BP.set_motor_dps(PORT_D, 0);
-        sleep(2);
+        sleep(1);
         // Pen omhoog
         BP.set_motor_position(PORT_A, 150);
-        sleep(2);
+        sleep(1);
         // Reset alles
         BP.set_motor_position(PORT_A, 150);
-        sleep(2);
+        sleep(1);
         BP.set_motor_position(PORT_B, 0);
-        sleep(2);
+        sleep(1);
         BP.set_motor_dps(PORT_C, 100);
         BP.set_motor_dps(PORT_D, 100);
         sleep(1);
         BP.set_motor_dps(PORT_C, 0);
         BP.set_motor_dps(PORT_D, 0);
-        sleep(2);
+        sleep(1);
         //Arm naar achteren bij beginpunt, zodat speler een zet kan maken
         BP.set_motor_position(PORT_B, -180);
     }
@@ -406,40 +406,40 @@ void streepjeInVak(int vakje, vector<int> &speelveld) {
         // Arm naar achtste vakje
         // Pen omhoog
         BP.set_motor_position(PORT_A, 150);
-        sleep(2);
+        sleep(1);
         BP.set_motor_position(PORT_B, 107.5);
-        sleep(2);
+        sleep(1);
         // Rijden
         BP.set_motor_dps(PORT_C, 25);
         BP.set_motor_dps(PORT_D, 25);
         sleep(1);
         BP.set_motor_dps(PORT_C, 0);
         BP.set_motor_dps(PORT_D, 0);
-        sleep(2);
+        sleep(1);
         // Pen naar beneden
         BP.set_motor_position(PORT_A, 0);
-        sleep(2);
+        sleep(1);
         // Streep tekenen door te rijden
         BP.set_motor_dps(PORT_C, 75);
         BP.set_motor_dps(PORT_D, 75);
         sleep(1);
         BP.set_motor_dps(PORT_C, 0);
         BP.set_motor_dps(PORT_D, 0);
-        sleep(2);
+        sleep(1);
         // Pen omhoog
         BP.set_motor_position(PORT_A, 150);
-        sleep(2);
+        sleep(1);
         // Reset alles
         BP.set_motor_position(PORT_A, 150);
-        sleep(2);
+        sleep(1);
         BP.set_motor_position(PORT_B, 0);
-        sleep(2);
+        sleep(1);
         BP.set_motor_dps(PORT_C, -100);
         BP.set_motor_dps(PORT_D, -100);
         sleep(1);
         BP.set_motor_dps(PORT_C, 0);
         BP.set_motor_dps(PORT_D, 0);
-        sleep(2);
+        sleep(1);
         //Arm naar achteren bij beginpunt, zodat speler een zet kan maken
         BP.set_motor_position(PORT_B, -180);
     }
@@ -448,46 +448,46 @@ void streepjeInVak(int vakje, vector<int> &speelveld) {
         // Arm naar negende vakje
         // Pen omhoog
         BP.set_motor_position(PORT_A, 150);
-        sleep(2);
+        sleep(1);
         BP.set_motor_position(PORT_B, 107.5);
-        sleep(2);
+        sleep(1);
         // Rijden
         BP.set_motor_dps(PORT_C, 100);
         BP.set_motor_dps(PORT_D, 100);
         sleep(1);
         BP.set_motor_dps(PORT_C, 0);
         BP.set_motor_dps(PORT_D, 0);
-        sleep(2);
+        sleep(1);
         BP.set_motor_dps(PORT_C, 25);
         BP.set_motor_dps(PORT_D, 25);
         sleep(1);
         BP.set_motor_dps(PORT_C, 0);
         BP.set_motor_dps(PORT_D, 0);
-        sleep(2);
+        sleep(1);
         // Pen naar beneden
         BP.set_motor_position(PORT_A, 0);
-        sleep(2);
+        sleep(1);
         // Streep tekenen door te rijden
         BP.set_motor_dps(PORT_C, 75);
         BP.set_motor_dps(PORT_D, 75);
         sleep(1);
         BP.set_motor_dps(PORT_C, 0);
         BP.set_motor_dps(PORT_D, 0);
-        sleep(2);
+        sleep(1);
         // Pen omhoog
         BP.set_motor_position(PORT_A, 150);
-        sleep(2);
+        sleep(1);
         // Reset alles
         BP.set_motor_position(PORT_A, 150);
-        sleep(2);
+        sleep(1);
         BP.set_motor_position(PORT_B, 0);
-        sleep(2);
+        sleep(1);
         BP.set_motor_dps(PORT_C, -100);
         BP.set_motor_dps(PORT_D, -100);
         sleep(2);
         BP.set_motor_dps(PORT_C, 0);
         BP.set_motor_dps(PORT_D, 0);
-        sleep(2);
+        sleep(1);
         //Arm naar achteren bij beginpunt, zodat speler een zet kan maken
         BP.set_motor_position(PORT_B, -180);
     }
@@ -515,225 +515,225 @@ bool scanVakje(int colorValue){
 void scannenPerVakje(sensor_color_t Color2, vector<int> &speelveld) {
     // Pen omhoog
     BP.set_motor_position(PORT_A, 150);
-    sleep(2);
+    sleep(1);
     // Arm naar bovenste horizontale rij
     BP.set_motor_position(PORT_B, 800);
-    sleep(2);
+    sleep(1);
     // Rijden naar eerste vakje
     BP.set_motor_dps(PORT_C, -25);
     BP.set_motor_dps(PORT_D, -25);
     sleep(1);
     BP.set_motor_dps(PORT_C, 0);
     BP.set_motor_dps(PORT_D, 0);
-    sleep(2);
+    sleep(1);
     // Check of vakje is ingevuld
     BP.get_sensor(PORT_2, &Color2);
     colorValue = (Color2.reflected_red + Color2.reflected_green + Color2.reflected_blue) / 3;
     if(scanVakje(colorValue) && (speelveld[0] == 0)){
         speelveld[0] = 2;
         printf("Streep in vak 1\n");
-		sleep(2);
+		sleep(1);
 		//Terug rijden naar beginpositie
 		BP.set_motor_dps(PORT_C, 25);
 		BP.set_motor_dps(PORT_D, 25);
 		sleep(1);
 		BP.set_motor_dps(PORT_C, 0);
 		BP.set_motor_dps(PORT_D, 0);
-		sleep(2);
+		sleep(1);
 		//Arm terug naar beginpositie
 		BP.set_motor_position(PORT_B, 0);
-		sleep(2);
+		sleep(1);
         return;
     }
-    sleep(2);
+    sleep(1);
     // Rijden naar tweede vakje
     BP.set_motor_dps(PORT_C, 100);
     BP.set_motor_dps(PORT_D, 100);
     sleep(1);
     BP.set_motor_dps(PORT_C, 0);
     BP.set_motor_dps(PORT_D, 0);
-    sleep(2);
+    sleep(1);
     // Check of vakje is ingevuld
     BP.get_sensor(PORT_2, &Color2);
     colorValue = (Color2.reflected_red + Color2.reflected_green + Color2.reflected_blue) / 3;
     if(scanVakje(colorValue) && (speelveld[1] == 0)){
         speelveld[1] = 2;
         printf("Streep in vak 2\n");
-		sleep(2);
+		sleep(1);
 		//Terug rijden naar beginpositie
 		BP.set_motor_dps(PORT_C, -75);
 		BP.set_motor_dps(PORT_D, -75);
 		sleep(1);
 		BP.set_motor_dps(PORT_C, 0);
 		BP.set_motor_dps(PORT_D, 0);
-		sleep(2);
+		sleep(1);
 		//Arm terug naar beginpositie
 		BP.set_motor_position(PORT_B, 0);
-		sleep(2);
+		sleep(1);
         return;
     }
-    sleep(2);
+    sleep(1);
     // Rijden naar derde vakje
     BP.set_motor_dps(PORT_C, 100);
     BP.set_motor_dps(PORT_D, 100);
     sleep(1);
     BP.set_motor_dps(PORT_C, 0);
     BP.set_motor_dps(PORT_D, 0);
-    sleep(2);
+    sleep(1);
     // Check of vakje is ingevuld
     BP.get_sensor(PORT_2, &Color2);
     colorValue = (Color2.reflected_red + Color2.reflected_green + Color2.reflected_blue) / 3;
     if(scanVakje(colorValue) && (speelveld[2] == 0)){
         speelveld[2] = 2;
         printf("Streep in vak 3\n");
-		sleep(2);
+		sleep(1);
 		//Terug rijden naar beginpositie
 		BP.set_motor_dps(PORT_C, -175);
 		BP.set_motor_dps(PORT_D, -175);
 		sleep(1);
 		BP.set_motor_dps(PORT_C, 0);
 		BP.set_motor_dps(PORT_D, 0);
-		sleep(2);
+		sleep(1);
 		//Arm terug naar beginpositie
 		BP.set_motor_position(PORT_B, 0);
-		sleep(2);
+		sleep(1);
         return;
     }
-    sleep(2);
-    // Arm naar middelste horizontale rij, vak 4
+    sleep(1);
+    // Arm naar middelste horizontale rij, vak 6
     BP.set_motor_position(PORT_B, 575);
-    sleep(2);
+    sleep(1);
     // Check of vakje is ingevuld
     BP.get_sensor(PORT_2, &Color2);
     colorValue = (Color2.reflected_red + Color2.reflected_green + Color2.reflected_blue) / 3;
     if(scanVakje(colorValue) && (speelveld[5] == 0)){
         speelveld[5] = 2;
-        printf("Streep in vak 4\n");
-		sleep(2);
+        printf("Streep in vak 6\n");
+		sleep(1);
 		//Terug rijden naar beginpositie
 		BP.set_motor_dps(PORT_C, -175);
 		BP.set_motor_dps(PORT_D, -175);
 		sleep(1);
 		BP.set_motor_dps(PORT_C, 0);
 		BP.set_motor_dps(PORT_D, 0);
-		sleep(2);
+		sleep(1);
 		//Arm terug naar beginpositie
 		BP.set_motor_position(PORT_B, 0);
-		sleep(2);
+		sleep(1);
         return;
     }
-    sleep(2);
+    sleep(1);
     // Rijden naar vijfde vakje
     BP.set_motor_dps(PORT_C, -100);
     BP.set_motor_dps(PORT_D, -100);
     sleep(1);
     BP.set_motor_dps(PORT_C, 0);
     BP.set_motor_dps(PORT_D, 0);
-    sleep(2);
+    sleep(1);
     // Check of vakje is ingevuld
     BP.get_sensor(PORT_2, &Color2);
     colorValue = (Color2.reflected_red + Color2.reflected_green + Color2.reflected_blue) / 3;
     if(scanVakje(colorValue) && (speelveld[4] == 0)){
         speelveld[4] = 2;
         printf("Streep in vak 5\n");
-		sleep(2);
+		sleep(1);
 		//Terug rijden naar beginpositie
 		BP.set_motor_dps(PORT_C, -75);
 		BP.set_motor_dps(PORT_D, -75);
 		sleep(1);
 		BP.set_motor_dps(PORT_C, 0);
 		BP.set_motor_dps(PORT_D, 0);
-		sleep(2);
+		sleep(1);
 		//Arm terug naar beginpositie
 		BP.set_motor_position(PORT_B, 0);
-		sleep(2);
+		sleep(1);
         return;
     }
-    sleep(2);
+    sleep(1);
     //Rijden naar vierde vakje
     BP.set_motor_dps(PORT_C, -100);
     BP.set_motor_dps(PORT_D, -100);
     sleep(1);
     BP.set_motor_dps(PORT_C, 0);
     BP.set_motor_dps(PORT_D, 0);
-    sleep(2);
+    sleep(1);
     // Check of vakje is ingevuld
     BP.get_sensor(PORT_2, &Color2);
     colorValue = (Color2.reflected_red + Color2.reflected_green + Color2.reflected_blue) / 3;
     if(scanVakje(colorValue) && (speelveld[3] == 0)){
         speelveld[3] = 2;
-        printf("Streep in vak 6\n");
-		sleep(2);
+        printf("Streep in vak 4\n");
+		sleep(1);
 		//Terug rijden naar beginpositie
 		BP.set_motor_dps(PORT_C, 25);
 		BP.set_motor_dps(PORT_D, 25);
 		sleep(1);
 		BP.set_motor_dps(PORT_C, 0);
 		BP.set_motor_dps(PORT_D, 0);
-		sleep(2);
+		sleep(1);
 		//Arm terug naar beginpositie
 		BP.set_motor_position(PORT_B, 0);
-		sleep(2);
+		sleep(1);
         return;
     }
-    sleep(2);
+    sleep(1);
     // Arm naar onderste horizontale rij, vak 7
     BP.set_motor_position(PORT_B, 375);
-    sleep(2);
+    sleep(1);
     // Check of vakje is ingevuld
     BP.get_sensor(PORT_2, &Color2);
     colorValue = (Color2.reflected_red + Color2.reflected_green + Color2.reflected_blue) / 3;
     if(scanVakje(colorValue) && (speelveld[6] == 0)){
         speelveld[6] = 2;
         printf("Streep in vak 7\n");
-		sleep(2);
+		sleep(1);
 		//Terug rijden naar beginpositie
 		BP.set_motor_dps(PORT_C, 25);
 		BP.set_motor_dps(PORT_D, 25);
 		sleep(1);
 		BP.set_motor_dps(PORT_C, 0);
 		BP.set_motor_dps(PORT_D, 0);
-		sleep(2);
+		sleep(1);
 		//Arm terug naar beginpositie
 		BP.set_motor_position(PORT_B, 0);
-		sleep(2);
+		sleep(1);
         return;
     }
-    sleep(2);
+    sleep(1);
     // Rijden naar achtste vakje
     BP.set_motor_dps(PORT_C, 100);
     BP.set_motor_dps(PORT_D, 100);
     sleep(1);
     BP.set_motor_dps(PORT_C, 0);
     BP.set_motor_dps(PORT_D, 0);
-    sleep(2);
+    sleep(1);
     // Check of vakje is ingevuld
     BP.get_sensor(PORT_2, &Color2);
     colorValue = (Color2.reflected_red + Color2.reflected_green + Color2.reflected_blue) / 3;
     if(scanVakje(colorValue) && (speelveld[7] == 0)){
 		speelveld[7] = 2;
         printf("Streep in vak 8\n");
-		sleep(2);
+		sleep(1);
 		//Terug rijden naar beginpositie
 		BP.set_motor_dps(PORT_C, -75);
 		BP.set_motor_dps(PORT_D, -75);
 		sleep(1);
 		BP.set_motor_dps(PORT_C, 0);
 		BP.set_motor_dps(PORT_D, 0);
-		sleep(2);
+		sleep(1);
 		//Arm terug naar beginpositie
 		BP.set_motor_position(PORT_B, 0);
-		sleep(2);
+		sleep(1);
         return;
     }
-    sleep(2);
+    sleep(1);
     //Rijden naar negende vakje
     BP.set_motor_dps(PORT_C, 100);
     BP.set_motor_dps(PORT_D, 100);
     sleep(1);
     BP.set_motor_dps(PORT_C, 0);
     BP.set_motor_dps(PORT_D, 0);
-    sleep(2);
+    sleep(1);
     // Check of vakje is ingevuld
     BP.get_sensor(PORT_2, &Color2);
     colorValue = (Color2.reflected_red + Color2.reflected_green + Color2.reflected_blue) / 3;
@@ -741,17 +741,17 @@ void scannenPerVakje(sensor_color_t Color2, vector<int> &speelveld) {
         speelveld[8] = 2;
         printf("Streep in vak 9\n");
 	}
-    sleep(2);
+    sleep(1);
     //Terug rijden naar beginpositie
     BP.set_motor_dps(PORT_C, -175);
     BP.set_motor_dps(PORT_D, -175);
     sleep(1);
     BP.set_motor_dps(PORT_C, 0);
     BP.set_motor_dps(PORT_D, 0);
-    sleep(2);
+    sleep(1);
     //Arm terug naar beginpositie
     BP.set_motor_position(PORT_B, 0);
-    sleep(2);
+    sleep(1);
 }
 
 //Checkt of een speler gewonnen heeft.
@@ -881,6 +881,10 @@ int checkwinchance(vector<int> &checkedveld, int &speler){
     else if(checkedveld[2] == speler && checkedveld[6] == speler){
         return 4;
     }
+    
+	else if(checkedveld[4] == speler && checkedveld[6] == speler){
+        return 2;
+    }
 
     else{
         return -1;
@@ -944,21 +948,26 @@ int main() {
                 if (checkwin(speelveld, robot) == true) {
                     winner = robot;
                     finished = true;
+                    break;
                 }
 
                 if (checkwin(speelveld, user) == true) {
                     winner = user;
                     finished = true;
+                    break;
                 }
 
                 nextmoveindex = checkwinchance(speelveld, robot);
-
-                cout << "\n" << nextmoveindex << "\n";
+		if (nextmoveindex != -1){
+			winner = robot;
+                	finished = true;
+			cout << "\n" << nextmoveindex << "\n";
+		}
 
                 if (nextmoveindex == -1) {
                     nextmoveindex = checkwinchance(speelveld, user);
+                    cout << "\n" << nextmoveindex << "\n";
                 }
-                cout << "\n" << nextmoveindex << "\n";
 
                 if (nextmoveindex == -1) {
                     legeindex = {};
@@ -970,16 +979,17 @@ int main() {
                     if (legeindex.size() == 0) {
                         winner = 3;
                         finished = true;
+                        break;
                     }
                     srand(time(0));
                     int gekozenindex = randomindex(legeindex.size());
-                    nextmoveindex = legeindex[gekozenindex] + 1;
+                    nextmoveindex = legeindex[gekozenindex];
+                    cout << "\n" << nextmoveindex << "\n";
                 }
-                cout << "\n" << nextmoveindex << "\n";
 
                 BP.set_motor_position(PORT_B, 0);
                 sleep(2);
-                streepjeInVak(nextmoveindex, speelveld);
+                streepjeInVak(nextmoveindex + 1, speelveld);
                 Touch3.pressed = false;
             }
         }
@@ -992,11 +1002,11 @@ int main() {
     }
 
     if (winner == robot) {
-        cout << "Wanneer ik gewonnen heb:\n" << "Hey!, ik heb gewonnen!";
+        cout << "Wanneer ik gewonnen heb:\n" << "Hey!, ik heb gewonnen!\n";
     } else if (winner == user) {
-        cout << "Gefeliciteerd met uw EPIC VICTORY ROYALE!";
+        cout << "Gefeliciteerd met uw EPIC VICTORY ROYALE!\n";
     } else {
-        cout << "Gelijkspel? Wat jammer! ;)";
+        cout << "Gelijkspel? Wat jammer!\n";
     }
     BP.reset_all();    // Reset everything so there are no run-away motors
     exit(-2);
