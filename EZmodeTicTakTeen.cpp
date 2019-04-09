@@ -799,103 +799,103 @@ bool checkwin(vector<int> &checkedveld, int &speler){
 int checkwinchance(vector<int> &checkedveld, int &speler){
     //horizontaal
     //rij 1
-    if(checkedveld[0] == speler && checkedveld[1] == speler){
+    if(checkedveld[0] == speler && checkedveld[1] == speler && checkedveld[2] == 0){
         return 2;
     }
 
-    else if(checkedveld[0] == speler && checkedveld[2] == speler){
+    else if(checkedveld[0] == speler && checkedveld[2] == speler && checkedveld[1] == 0){
         return 1;
     }
 
-    else if(checkedveld[1] == speler && checkedveld[2] == speler){
+    else if(checkedveld[1] == speler && checkedveld[2] == speler && checkedveld[0] == 0){
         return 0;
     }
         //rij 2
-    else if(checkedveld[3] == speler && checkedveld[4] == speler){
+    else if(checkedveld[3] == speler && checkedveld[4] == speler && checkedveld[5] == 0){
         return 5;
     }
 
-    else if(checkedveld[3] == speler && checkedveld[5] == speler){
+    else if(checkedveld[3] == speler && checkedveld[5] == speler && checkedveld[4] == 0){
         return 4;
     }
 
-    else if(checkedveld[4] == speler && checkedveld[5] == speler){
+    else if(checkedveld[4] == speler && checkedveld[5] == speler && checkedveld[3] == 0){
         return 3;
     }
         //rij 3
-    else if(checkedveld[6] == speler && checkedveld[7] == speler){
+    else if(checkedveld[6] == speler && checkedveld[7] == speler && checkedveld[8] == 0){
         return 8;
     }
 
-    else if(checkedveld[6] == speler && checkedveld[8] == speler){
+    else if(checkedveld[6] == speler && checkedveld[8] == speler && checkedveld[7] == 0){
         return 7;
     }
 
-    else if(checkedveld[7] == speler && checkedveld[8] == speler){
+    else if(checkedveld[7] == speler && checkedveld[8] == speler && checkedveld[6] == 0){
         return 6;
     }
 
         //verticaal
         //rij 1
-    else if(checkedveld[0] == speler && checkedveld[3] == speler){
+    else if(checkedveld[0] == speler && checkedveld[3] == speler && checkedveld[6] == 0){
         return 6;
     }
 
-    else if(checkedveld[0] == speler && checkedveld[6] == speler){
+    else if(checkedveld[0] == speler && checkedveld[6] == speler && checkedveld[3] == 0){
         return 3;
     }
 
-    else if(checkedveld[3] == speler && checkedveld[6] == speler){
+    else if(checkedveld[3] == speler && checkedveld[6] == speler && checkedveld[0] == 0){
         return 0;
     }
         //rij 2
-    else if(checkedveld[1] == speler && checkedveld[4] == speler){
+    else if(checkedveld[1] == speler && checkedveld[4] == speler && checkedveld[7] == 0){
         return 7;
     }
 
-    else if(checkedveld[1] == speler && checkedveld[7] == speler){
+    else if(checkedveld[1] == speler && checkedveld[7] == speler && checkedveld[4] == 0){
         return 4;
     }
 
-    else if(checkedveld[4] == speler && checkedveld[7] == speler){
+    else if(checkedveld[4] == speler && checkedveld[7] == speler && checkedveld[1] == 0){
         return 1;
     }
         //rij 3
-    else if(checkedveld[2] == speler && checkedveld[5] == speler){
+    else if(checkedveld[2] == speler && checkedveld[5] == speler && checkedveld[8] == 0){
         return 8;
     }
 
-    else if(checkedveld[2] == speler && checkedveld[8] == speler){
+    else if(checkedveld[2] == speler && checkedveld[8] == speler && checkedveld[5] == 0){
         return 5;
     }
 
-    else if(checkedveld[5] == speler && checkedveld[8] == speler){
+    else if(checkedveld[5] == speler && checkedveld[8] == speler && checkedveld[2] == 0){
         return 2;
     }
 
         //diagonaal
         //rij 1
-    else if(checkedveld[0] == speler && checkedveld[4] == speler){
+    else if(checkedveld[0] == speler && checkedveld[4] == speler && checkedveld[8] == 0){
         return 8;
     }
 
-    else if(checkedveld[0] == speler && checkedveld[8] == speler){
+    else if(checkedveld[0] == speler && checkedveld[8] == speler && checkedveld[4] == 0){
         return 4;
     }
 
-    else if(checkedveld[4] == speler && checkedveld[8] == speler){
+    else if(checkedveld[4] == speler && checkedveld[8] == speler && checkedveld[0] == 0){
         return 0;
     }
         //rij 2
-    else if(checkedveld[2] == speler && checkedveld[4] == speler){
+    else if(checkedveld[2] == speler && checkedveld[4] == speler && checkedveld[6] == 0){
         return 6;
     }
 
-    else if(checkedveld[2] == speler && checkedveld[6] == speler){
+    else if(checkedveld[2] == speler && checkedveld[6] == speler && checkedveld[4] == 0){
         return 4;
     }
     
-	else if(checkedveld[4] == speler && checkedveld[6] == speler){
+	else if(checkedveld[4] == speler && checkedveld[6] == speler && checkedveld[2] == 0){
         return 2;
     }
 
@@ -914,8 +914,6 @@ int main() {
     signal(SIGINT, exit_signal_handler); // register the exit function for Ctrl+C
 
     BP.detect();
-
-    // bool gridDrawn = 0;
 
     int error;
     BP.set_sensor_type(PORT_2, SENSOR_TYPE_NXT_COLOR_FULL);
@@ -970,23 +968,14 @@ int main() {
 
                 nextmoveindex = checkwinchance(speelveld, robot);
                 if (nextmoveindex != -1) {
-                    if (speelveld[nextmoveindex] == 0) {
-                        winner = robot;
-                        finished = true;
-                        cout << "\n" << nextmoveindex << "\n";
-                    }else{
-                        nextmoveindex = -1;
-
-                    }
+                    winner = robot;
+                    finished = true;
+                    cout << "\n" << nextmoveindex << "\n";
                 }
 
                 if (nextmoveindex == -1) {
                     nextmoveindex = checkwinchance(speelveld, user);
-                    if (speelveld[nextmoveindex] == 0) {
-                        cout << "\n" << nextmoveindex << "\n";
-                    }else{
-                        nextmoveindex = -1;
-                    }
+                    cout << "\n" << nextmoveindex << "\n";
                 }
 
                 if (nextmoveindex == -1) {
@@ -1017,7 +1006,6 @@ int main() {
         if (error == 4) {
             printf("Waiting for sensors to be configured");
         }
-
         usleep(20000);
     }
 
