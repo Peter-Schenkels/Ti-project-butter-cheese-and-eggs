@@ -929,7 +929,9 @@ int main() {
     int nextmoveindex = 0;
 
     drawGrid();
-    streepjeInVak(1, speelveld);
+
+    srand(time(0));
+    streepjeInVak(randomindex(9), speelveld);
 
     while (finished == false) {
         error = 0;
@@ -979,8 +981,6 @@ int main() {
                     nextmoveindex = checkwinchance(speelveld, user);
                     cout << "\n" << "Kan de user winnen?" << "\n";
                     if (speelveld[nextmoveindex] == 0) {
-                        winner = robot;
-                        finished = true;
                         cout << "\n" << nextmoveindex << "\n";
                     }else{
                         nextmoveindex = -1;
@@ -996,7 +996,7 @@ int main() {
                             legeindex.push_back(i);
                         }
                     }
-                    if (legeindex.size() == 0) {
+                    if (legeindex.size() == 1 || legeindex.size() == 0) {
                         winner = 3;
                         finished = true;
                         break;
