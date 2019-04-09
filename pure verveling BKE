@@ -157,11 +157,11 @@ void speel() {
 		int awnser = move(winningSets, playfield);
 		if (awnser <= 0) {
 			if (awnser == 0) {
-				cout << "De Robot heeft je verslagen!\n\n\n\n";
+				cout << "\nDe Robot heeft je verslagen!\n\n\n\n";
 			} else if (awnser == -1) {
-				cout << "Jij hebt de Robot verslagen!\n\n\n\n";
+				cout << "\nJij hebt de Robot verslagen!\n\n\n\n";
 			} else if (awnser == -2) {
-				cout << "Gelijkspel!\n\n\n\n";
+				cout << "\nGelijkspel!\n\n\n\n";
 			}
 			break;
 		}
@@ -174,12 +174,16 @@ void speel() {
 			while(1){
 				cin >> position;
 				
-				if (playfield[position-1] == 0) {
-					playfield[position-1] = 2;
-					turn = 0;
-					break;
+				if (position >= 1 && position <= 9) {
+					if (playfield[position-1] == 0) {
+						playfield[position-1] = 2;
+						turn = 0;
+						break;
+					} else {
+						cout << "\nPositie " << position << " wordt al gebruikt!\nGeef een zet: 1 t/m 9 (van boven links naar onder rechts): ";
+					}
 				} else {
-					cout << "\nPositie " << position << " wordt al gebruikt!\nGeef een zet: 1 t/m 9 (van boven links naar onder rechts): ";
+					cout << "\nPositie " << position << " bestaat niet in de grid!\nGeef een zet: 1 t/m 9 (van boven links naar onder rechts): ";
 				}
 			}
 		}
@@ -189,8 +193,50 @@ void speel() {
 }
 
 int main() {
-	speel();
+	while(1){
+		speel();
+		
+		string again = "";
+		cout << "Nog een keer?(0 = no, 1 = yes): ";
+		while(1){
+			cin >> again;
+			
+			if (again == "yes" || again == "no") {
+				if (again == "yes") {
+					cout << "\n\n\n";
+					break;
+				} else {
+					return 0;
+				}
+			}
+			cout << "Antwoord is niet 'yes' of 'no'!, vul opnieuw in (0 = no, 1 = yes): ";
+		}
+	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 void main2(){
 	// alle mogelijkheden om te winnen
