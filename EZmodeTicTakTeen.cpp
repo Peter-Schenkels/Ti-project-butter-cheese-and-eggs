@@ -10,6 +10,19 @@ using namespace std;
 
 //Robot = 1
 //User = 2
+//De robot tekent een grid en zet een streep op een random plek.
+//Het algorithme werkt als volgt:
+//De loop begint, en blijft doorgaan zolang er geen winnaar is.
+//Er wordt pas iets uitgevoerdt wanneer de knop is ingedrukt.
+//De robot checkt de vakjes voor een verandering (de user input).
+//Wanneer het deze ziet begint het met checken.
+//Eerst kijkt het of de robot heeft gewonnen. Als dit waar is stopt het.
+//Daarna kijkt het of de user gewonnen heeft. Als dit waar is stopt het.
+//Daarna kijkt het of de robot een winkans heeft. Als dit waar zet hij een streep op de plek.
+//Als hij dit niet heeft kijkt het of de user een winkans heeft. Als dit waar zet hij een streep op de plek.
+//Als hij dit niet heeft kiest hij een random lege plek.
+//Daarna zet hij een streep.
+//Daarna wacht hij op de zet van de user (wacht op input van de knop) en begint het weer opnieuw.
 
 BrickPi3 BP;
 int colorValue = 0;
