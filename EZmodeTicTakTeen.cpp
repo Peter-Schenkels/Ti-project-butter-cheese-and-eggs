@@ -89,7 +89,7 @@ void drawGrid(){
     BP.set_motor_dps(PORT_D, 0);
     sleep(2);
     BP.set_motor_position(PORT_B, -180);
-    sleep(5);
+    sleep(1);
 }
 
 //Zet een streepje in een vakje.
@@ -532,6 +532,17 @@ void scannenPerVakje(sensor_color_t Color2, vector<int> &speelveld) {
     if(scanVakje(colorValue) && (speelveld[0] == 0)){
         speelveld[0] = 2;
         printf("Streep in vak 1\n");
+		sleep(2);
+		//Terug rijden naar beginpositie
+		BP.set_motor_dps(PORT_C, 25);
+		BP.set_motor_dps(PORT_D, 25);
+		sleep(1);
+		BP.set_motor_dps(PORT_C, 0);
+		BP.set_motor_dps(PORT_D, 0);
+		sleep(2);
+		//Arm terug naar beginpositie
+		BP.set_motor_position(PORT_B, 0);
+		sleep(2);
         return;
     }
     sleep(2);
@@ -548,6 +559,17 @@ void scannenPerVakje(sensor_color_t Color2, vector<int> &speelveld) {
     if(scanVakje(colorValue) && (speelveld[1] == 0)){
         speelveld[1] = 2;
         printf("Streep in vak 2\n");
+		sleep(2);
+		//Terug rijden naar beginpositie
+		BP.set_motor_dps(PORT_C, -75);
+		BP.set_motor_dps(PORT_D, -75);
+		sleep(1);
+		BP.set_motor_dps(PORT_C, 0);
+		BP.set_motor_dps(PORT_D, 0);
+		sleep(2);
+		//Arm terug naar beginpositie
+		BP.set_motor_position(PORT_B, 0);
+		sleep(2);
         return;
     }
     sleep(2);
@@ -564,10 +586,21 @@ void scannenPerVakje(sensor_color_t Color2, vector<int> &speelveld) {
     if(scanVakje(colorValue) && (speelveld[2] == 0)){
         speelveld[2] = 2;
         printf("Streep in vak 3\n");
+		sleep(2);
+		//Terug rijden naar beginpositie
+		BP.set_motor_dps(PORT_C, -175);
+		BP.set_motor_dps(PORT_D, -175);
+		sleep(1);
+		BP.set_motor_dps(PORT_C, 0);
+		BP.set_motor_dps(PORT_D, 0);
+		sleep(2);
+		//Arm terug naar beginpositie
+		BP.set_motor_position(PORT_B, 0);
+		sleep(2);
         return;
     }
     sleep(2);
-    // Arm naar middelste horizontale rij
+    // Arm naar middelste horizontale rij, vak 4
     BP.set_motor_position(PORT_B, 575);
     sleep(2);
     // Check of vakje is ingevuld
@@ -576,6 +609,17 @@ void scannenPerVakje(sensor_color_t Color2, vector<int> &speelveld) {
     if(scanVakje(colorValue) && (speelveld[5] == 0)){
         speelveld[5] = 2;
         printf("Streep in vak 4\n");
+		sleep(2);
+		//Terug rijden naar beginpositie
+		BP.set_motor_dps(PORT_C, -175);
+		BP.set_motor_dps(PORT_D, -175);
+		sleep(1);
+		BP.set_motor_dps(PORT_C, 0);
+		BP.set_motor_dps(PORT_D, 0);
+		sleep(2);
+		//Arm terug naar beginpositie
+		BP.set_motor_position(PORT_B, 0);
+		sleep(2);
         return;
     }
     sleep(2);
@@ -592,6 +636,17 @@ void scannenPerVakje(sensor_color_t Color2, vector<int> &speelveld) {
     if(scanVakje(colorValue) && (speelveld[4] == 0)){
         speelveld[4] = 2;
         printf("Streep in vak 5\n");
+		sleep(2);
+		//Terug rijden naar beginpositie
+		BP.set_motor_dps(PORT_C, -75);
+		BP.set_motor_dps(PORT_D, -75);
+		sleep(1);
+		BP.set_motor_dps(PORT_C, 0);
+		BP.set_motor_dps(PORT_D, 0);
+		sleep(2);
+		//Arm terug naar beginpositie
+		BP.set_motor_position(PORT_B, 0);
+		sleep(2);
         return;
     }
     sleep(2);
@@ -608,10 +663,21 @@ void scannenPerVakje(sensor_color_t Color2, vector<int> &speelveld) {
     if(scanVakje(colorValue) && (speelveld[3] == 0)){
         speelveld[3] = 2;
         printf("Streep in vak 6\n");
+		sleep(2);
+		//Terug rijden naar beginpositie
+		BP.set_motor_dps(PORT_C, 25);
+		BP.set_motor_dps(PORT_D, 25);
+		sleep(1);
+		BP.set_motor_dps(PORT_C, 0);
+		BP.set_motor_dps(PORT_D, 0);
+		sleep(2);
+		//Arm terug naar beginpositie
+		BP.set_motor_position(PORT_B, 0);
+		sleep(2);
         return;
     }
     sleep(2);
-    // Arm naar onderste horizontale rij
+    // Arm naar onderste horizontale rij, vak 7
     BP.set_motor_position(PORT_B, 375);
     sleep(2);
     // Check of vakje is ingevuld
@@ -620,6 +686,17 @@ void scannenPerVakje(sensor_color_t Color2, vector<int> &speelveld) {
     if(scanVakje(colorValue) && (speelveld[6] == 0)){
         speelveld[6] = 2;
         printf("Streep in vak 7\n");
+		sleep(2);
+		//Terug rijden naar beginpositie
+		BP.set_motor_dps(PORT_C, 25);
+		BP.set_motor_dps(PORT_D, 25);
+		sleep(1);
+		BP.set_motor_dps(PORT_C, 0);
+		BP.set_motor_dps(PORT_D, 0);
+		sleep(2);
+		//Arm terug naar beginpositie
+		BP.set_motor_position(PORT_B, 0);
+		sleep(2);
         return;
     }
     sleep(2);
@@ -634,8 +711,19 @@ void scannenPerVakje(sensor_color_t Color2, vector<int> &speelveld) {
     BP.get_sensor(PORT_2, &Color2);
     colorValue = (Color2.reflected_red + Color2.reflected_green + Color2.reflected_blue) / 3;
     if(scanVakje(colorValue) && (speelveld[7] == 0)){
-        speelveld[7] = 2;
+		speelveld[7] = 2;
         printf("Streep in vak 8\n");
+		sleep(2);
+		//Terug rijden naar beginpositie
+		BP.set_motor_dps(PORT_C, -75);
+		BP.set_motor_dps(PORT_D, -75);
+		sleep(1);
+		BP.set_motor_dps(PORT_C, 0);
+		BP.set_motor_dps(PORT_D, 0);
+		sleep(2);
+		//Arm terug naar beginpositie
+		BP.set_motor_position(PORT_B, 0);
+		sleep(2);
         return;
     }
     sleep(2);
@@ -652,8 +740,7 @@ void scannenPerVakje(sensor_color_t Color2, vector<int> &speelveld) {
     if(scanVakje(colorValue) && (speelveld[8] == 0)){
         speelveld[8] = 2;
         printf("Streep in vak 9\n");
-        return;
-    }
+	}
     sleep(2);
     //Terug rijden naar beginpositie
     BP.set_motor_dps(PORT_C, -175);
