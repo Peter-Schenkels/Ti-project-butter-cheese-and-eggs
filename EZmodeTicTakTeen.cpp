@@ -943,7 +943,12 @@ int main() {
 
                 scannenPerVakje(Color2, speelveld);
 
-                //vector<int> checkedveld = checkspeelveld(speelveld, robotzetten);
+                for (unsigned int i = 0; i < speelveld.size(); i++){
+                    if (i == 3 || i == 6){
+                        cout << "\n";
+                    }
+                    cout << speelveld[i] << ",";
+                }
 
                 if (checkwin(speelveld, robot) == true) {
                     winner = robot;
@@ -958,6 +963,7 @@ int main() {
                 }
 
                 nextmoveindex = checkwinchance(speelveld, robot);
+                cout << "\n" << "Kan de robot winnen?" << "\n";
                 if (nextmoveindex != -1) {
                     if (speelveld[nextmoveindex] == 0) {
                         winner = robot;
@@ -965,15 +971,25 @@ int main() {
                         cout << "\n" << nextmoveindex << "\n";
                     }else{
                         nextmoveindex = -1;
+                        cout << "Nee!" << "\n";
                     }
                 }
 
                 if (nextmoveindex == -1) {
                     nextmoveindex = checkwinchance(speelveld, user);
-                    cout << "\n" << nextmoveindex << "\n";
+                    cout << "\n" << "Kan de user winnen?" << "\n";
+                    if (speelveld[nextmoveindex] == 0) {
+                        winner = robot;
+                        finished = true;
+                        cout << "\n" << nextmoveindex << "\n";
+                    }else{
+                        nextmoveindex = -1;
+                        cout << "Nee!" << "\n";
+                    }
                 }
 
                 if (nextmoveindex == -1) {
+                    cout << "\n" << "We kiezen een Random index!" << "\n";
                     legeindex = {};
                     for (unsigned int i = 0; i < speelveld.size(); i++) {
                         if (speelveld[i] == 0) {
