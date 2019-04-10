@@ -103,8 +103,9 @@ void move(vector<int> & stappen){
 int main(){
 	signal(SIGINT, exit_signal_handler); // register the exit function for Ctrl+C
 	
-	vector<string> noots {"f8", "c16", "e", "b", "e8", "c", "c16", "e"};
+	//vector<string> noots {"f8", "c16", "e", "b", "e8", "c", "c16", "e"};
 	//vector<string> noots {"c", "c16", "g8", "a8", "e8", "f8", "c8", "f8", "g8", "c16", "g8", "a8", "e8", "f8", "c8", "f8", "g8", "c16", "g8", "a8", "e8", "f8", "c8", "f8", "g8"};
+	vector<string> noots {"c8", "d8", "e8", "c8", "c8", "d8", "e8", "c8", "e8", "f8", "g8", "e8", "f8", "g8", "g8", "a16", "g8", "f8", "e8", "c8", "g8", "a16", "g8", "f8", "e8", "c8", "c8", "g", "c8", "c8", "g", "c8",};
 	vector<int> temp = transform(noots);
 	move(temp);
 	
