@@ -26,6 +26,8 @@ using namespace std;
 
 BrickPi3 BP;
 int colorValue = 0;
+int colorValue1 = 0;
+int colorValue2 = 0;
 
 void exit_signal_handler(int signo);
 
@@ -508,9 +510,9 @@ void streepjeInVak(int vakje, vector<int> &speelveld) {
 
 //Checkt of een vakje zwart of wit is.
 bool scanVakje(int colorValue){
+    printf("KLEUR: %4d\n", colorValue);
     // Kleur is zwart
-    printf("KELEUR: %4d\n", colorValue);
-    if (colorValue < 580){
+    if (colorValue < 570){
         printf("ZWART\n");
         return 1;
     }
@@ -541,7 +543,11 @@ void scannenPerVakje(sensor_color_t Color2, vector<int> &speelveld) {
     sleep(1);
     // Check of vakje is ingevuld
     BP.get_sensor(PORT_2, &Color2);
-    colorValue = (Color2.reflected_red + Color2.reflected_green + Color2.reflected_blue) / 3;
+    colorValue1 = (Color2.reflected_red + Color2.reflected_green + Color2.reflected_blue) / 3;   
+    sleep(1); 
+    BP.get_sensor(PORT_2, &Color2);
+    colorValue2 = (Color2.reflected_red + Color2.reflected_green + Color2.reflected_blue) / 3;
+    colorValue = (colorValue1 + colorValue2) / 2;
     if(scanVakje(colorValue) && (speelveld[0] == 0)){
         speelveld[0] = 2;
         printf("Streep in vak 1\n");
@@ -568,7 +574,11 @@ void scannenPerVakje(sensor_color_t Color2, vector<int> &speelveld) {
     sleep(1);
     // Check of vakje is ingevuld
     BP.get_sensor(PORT_2, &Color2);
-    colorValue = (Color2.reflected_red + Color2.reflected_green + Color2.reflected_blue) / 3;
+    colorValue1 = (Color2.reflected_red + Color2.reflected_green + Color2.reflected_blue) / 3;   
+    sleep(1);    
+    BP.get_sensor(PORT_2, &Color2);
+    colorValue2 = (Color2.reflected_red + Color2.reflected_green + Color2.reflected_blue) / 3;
+    colorValue = (colorValue1 + colorValue2) / 2;
     if(scanVakje(colorValue) && (speelveld[1] == 0)){
         speelveld[1] = 2;
         printf("Streep in vak 2\n");
@@ -595,7 +605,11 @@ void scannenPerVakje(sensor_color_t Color2, vector<int> &speelveld) {
     sleep(1);
     // Check of vakje is ingevuld
     BP.get_sensor(PORT_2, &Color2);
-    colorValue = (Color2.reflected_red + Color2.reflected_green + Color2.reflected_blue) / 3;
+    colorValue1 = (Color2.reflected_red + Color2.reflected_green + Color2.reflected_blue) / 3;   
+    sleep(1);    
+    BP.get_sensor(PORT_2, &Color2);
+    colorValue2 = (Color2.reflected_red + Color2.reflected_green + Color2.reflected_blue) / 3;
+    colorValue = (colorValue1 + colorValue2) / 2;
     if(scanVakje(colorValue) && (speelveld[2] == 0)){
         speelveld[2] = 2;
         printf("Streep in vak 3\n");
@@ -618,7 +632,11 @@ void scannenPerVakje(sensor_color_t Color2, vector<int> &speelveld) {
     sleep(1);
     // Check of vakje is ingevuld
     BP.get_sensor(PORT_2, &Color2);
-    colorValue = (Color2.reflected_red + Color2.reflected_green + Color2.reflected_blue) / 3;
+    colorValue1 = (Color2.reflected_red + Color2.reflected_green + Color2.reflected_blue) / 3;   
+    sleep(1);    
+    BP.get_sensor(PORT_2, &Color2);
+    colorValue2 = (Color2.reflected_red + Color2.reflected_green + Color2.reflected_blue) / 3;
+    colorValue = (colorValue1 + colorValue2) / 2;
     if(scanVakje(colorValue) && (speelveld[5] == 0)){
         speelveld[5] = 2;
         printf("Streep in vak 6\n");
@@ -645,7 +663,11 @@ void scannenPerVakje(sensor_color_t Color2, vector<int> &speelveld) {
     sleep(1);
     // Check of vakje is ingevuld
     BP.get_sensor(PORT_2, &Color2);
-    colorValue = (Color2.reflected_red + Color2.reflected_green + Color2.reflected_blue) / 3;
+    colorValue1 = (Color2.reflected_red + Color2.reflected_green + Color2.reflected_blue) / 3;   
+    sleep(1);    
+    BP.get_sensor(PORT_2, &Color2);
+    colorValue2 = (Color2.reflected_red + Color2.reflected_green + Color2.reflected_blue) / 3;
+    colorValue = (colorValue1 + colorValue2) / 2;
     if(scanVakje(colorValue) && (speelveld[4] == 0)){
         speelveld[4] = 2;
         printf("Streep in vak 5\n");
@@ -672,7 +694,11 @@ void scannenPerVakje(sensor_color_t Color2, vector<int> &speelveld) {
     sleep(1);
     // Check of vakje is ingevuld
     BP.get_sensor(PORT_2, &Color2);
-    colorValue = (Color2.reflected_red + Color2.reflected_green + Color2.reflected_blue) / 3;
+    colorValue1 = (Color2.reflected_red + Color2.reflected_green + Color2.reflected_blue) / 3;   
+    sleep(1);    
+    BP.get_sensor(PORT_2, &Color2);
+    colorValue2 = (Color2.reflected_red + Color2.reflected_green + Color2.reflected_blue) / 3;
+    colorValue = (colorValue1 + colorValue2) / 2;
     if(scanVakje(colorValue) && (speelveld[3] == 0)){
         speelveld[3] = 2;
         printf("Streep in vak 4\n");
@@ -695,7 +721,11 @@ void scannenPerVakje(sensor_color_t Color2, vector<int> &speelveld) {
     sleep(1);
     // Check of vakje is ingevuld
     BP.get_sensor(PORT_2, &Color2);
-    colorValue = (Color2.reflected_red + Color2.reflected_green + Color2.reflected_blue) / 3;
+    colorValue1 = (Color2.reflected_red + Color2.reflected_green + Color2.reflected_blue) / 3;   
+    sleep(1);    
+    BP.get_sensor(PORT_2, &Color2);
+    colorValue2 = (Color2.reflected_red + Color2.reflected_green + Color2.reflected_blue) / 3;
+    colorValue = (colorValue1 + colorValue2) / 2;
     if(scanVakje(colorValue) && (speelveld[6] == 0)){
         speelveld[6] = 2;
         printf("Streep in vak 7\n");
@@ -722,7 +752,11 @@ void scannenPerVakje(sensor_color_t Color2, vector<int> &speelveld) {
     sleep(1);
     // Check of vakje is ingevuld
     BP.get_sensor(PORT_2, &Color2);
-    colorValue = (Color2.reflected_red + Color2.reflected_green + Color2.reflected_blue) / 3;
+    colorValue1 = (Color2.reflected_red + Color2.reflected_green + Color2.reflected_blue) / 3;   
+    sleep(1);    
+    BP.get_sensor(PORT_2, &Color2);
+    colorValue2 = (Color2.reflected_red + Color2.reflected_green + Color2.reflected_blue) / 3;
+    colorValue = (colorValue1 + colorValue2) / 2;
     if(scanVakje(colorValue) && (speelveld[7] == 0)){
 		speelveld[7] = 2;
         printf("Streep in vak 8\n");
@@ -749,7 +783,10 @@ void scannenPerVakje(sensor_color_t Color2, vector<int> &speelveld) {
     sleep(1);
     // Check of vakje is ingevuld
     BP.get_sensor(PORT_2, &Color2);
-    colorValue = (Color2.reflected_red + Color2.reflected_green + Color2.reflected_blue) / 3;
+    colorValue1 = (Color2.reflected_red + Color2.reflected_green + Color2.reflected_blue) / 3;    
+    BP.get_sensor(PORT_2, &Color2);
+    colorValue2 = (Color2.reflected_red + Color2.reflected_green + Color2.reflected_blue) / 3;
+    colorValue = (colorValue1 + colorValue2) / 2;
     if(scanVakje(colorValue) && (speelveld[8] == 0)){
         speelveld[8] = 2;
         printf("Streep in vak 9\n");
@@ -1010,9 +1047,9 @@ int main() {
     }
 
     if (winner == robot) {
-        cout << "Wanneer ik gewonnen heb:\n" << "Hey!, ik heb gewonnen!\n";
+        cout << "Verloren! Loser...";
     } else if (winner == user) {
-        cout << "Gefeliciteerd met uw EPIC VICTORY ROYALE!\n";
+        cout << "Gefeliciteerd! U heeft gewonnen!\n";
     } else {
         cout << "Gelijkspel? Wat jammer!\n";
     }
